@@ -20,25 +20,29 @@ int scheduler(char *mode, int thread_num, int tickets[], int quantum){
 	}else if(strcmp(mode,"No Expropiativo")==0){	
 		printf("Porcentaje: %d%% \n",quantum);
 	} 
-	
+	return winner_thread;
 
 }
 
 
 int main(int argc,char *argv[]){
-/*   size_t sk_size = SIGSTKSZ;
-   char sk_addr[SIGSTKSZ];
-   mctx_t mctx_create_thread,mctx_main;
-   mctx_t *sf_arg = &mctx_main;   
-   mctx_t *mctx_p = &mctx_create_thread;
-   mctx_create(mctx_p,hello, (void*)sf_arg,(void*)sk_addr, sk_size);
-	mctx_switch(&mctx_main,&mctx_create_thread);
-   printf("Fin desde\n");
-*/
+
 	int thread_num = 5;
 	int tickets[] = {20,10,5,30,10};
 	char mode[] = "No Expropiativo";
 	int quantum = 15;
-	scheduler(mode, thread_num, tickets, quantum);
+	int winner_thread = scheduler(mode, thread_num, tickets, quantum);
+	printf("Winner Thread: %d\n",winner_thread);
+
+	size_t sk_size = SIGSTKSZ;
+	char sk_addr[SIGSTKSZ];
+	mctx_t mctx_create_thread, mctx_main;
+	mctx_t *sf_arg = &mctx_main;   
+	mctx_t *mctx_p = &mctx_create_thread;
+	mctx_create(mctx_p, hello, (void*)sf_arg, (void*)sk_addr, sk_size);
+	mctx_switch(&mctx_main, &mctx_create_thread);
+	printf("Fin desde\n");
+
+
 
 }
