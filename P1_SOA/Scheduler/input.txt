@@ -1,0 +1,25 @@
+MODO=No_Expropiativo
+Quantum=100
+Num_threads=6
+
+Thread 1 Num_tickets 11
+Thread 2 Num_tickets 15
+Thread 3 Num_tickets 9
+Thread 4 Num_tickets 17
+Thread 5 Num_tickets 7
+Thread 6 Num_tickets 19
+
+Thread 1 Workload 8
+Thread 2 Workload 16
+Thread 3 Workload 32
+Thread 4 Workload 64
+Thread 5 Workload 128
+Thread 6 Workload 256
+
+Thread 1 Percent_halt 15
+Thread 2 Percent_halt 20
+Thread 3 Percent_halt 25
+Thread 4 Percent_halt 30
+Thread 5 Percent_halt 35
+Thread 6 Percent_halt 40
+
