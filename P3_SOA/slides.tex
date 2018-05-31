@@ -15,7 +15,7 @@
 %	PACKAGES AND THEMES
 %----------------------------------------------------------------------------------------
 
-\documentclass{beamer}
+\documentclass[xcolor=table]{beamer}
 
 \mode<presentation> {
 
@@ -78,6 +78,7 @@
 
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{xcolor}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -179,18 +180,35 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ul
 \begin{frame}
 \frametitle{Table}
 \begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
+\centering
+\label{RM1}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+T1 & \cellcolor{blue} & \cellcolor{blue} & & & \\ \hline
+T2 & & & \cellcolor{red}  & \cellcolor{red} & \\ \hline
+T3 & & & & & \cellcolor{green} \\ \hline
 \end{tabular}
-\caption{Table caption}
+\caption{Rate Monotonic}
 \end{table}
 \end{frame}
+
+%------------------------------------------------
+
+%\begin{frame}
+%\frametitle{TableMod}
+%\begin{table}
+%\centering
+%\caption{My caption}
+%\label{my-label}
+%\begin{tabular}{|l|l|l|l|l|}
+%\hline
+%\cellcolor{blue!25}1 & \cellcolor{FFFFFF}2 & 3 & 4 & 5 \\ \hline
+%\cellcolor{FE0000}  & \cellcolor{FFFFFF}  & & & \\ \hline
+% & \cellcolor{3166FF}  & \cellcolor{3166FF} & & \\ \hline
+% & & & \cellcolor{red!25}z & \cellcolor{grey} \\ \hline
+%\end{tabular}
+%\end{table}
+%\end{frame}
 
 %------------------------------------------------
 
